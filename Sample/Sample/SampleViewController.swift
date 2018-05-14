@@ -27,19 +27,22 @@ class SampleViewController: UIViewController, UIAdaptivePresentationControllerDe
     @objc public func openAlert(sender:UIBarButtonItem) {
          
         let popOverAlertViewController = PopOverAlertViewController.instantiate()
-        popOverAlertViewController.setButtonText("受注メールを送信する")
-        popOverAlertViewController.setMessage("注文が入ったら、まずは内容を確認して在庫商品の有無を確認・検品などをおこないましょう。\n\n確認ができた後、受注メールを送信しましょう。")
-        // popOverAlertViewController.setFooterMessage("受注メールは、「その他 > ショップ設定 > 受注メール編集」で設定されている内容を送信します。")
+        popOverAlertViewController.setButtonText("OK")
+        popOverAlertViewController.setMessage("Do you want to send mail?")
+        popOverAlertViewController.setSubMessage("When you press OK, the mail will be sent immediately.")
         
         popOverAlertViewController.setShowsVerticalScrollIndicator(true)
         popOverAlertViewController.setSeparatorStyle(UITableViewCellSeparatorStyle.singleLine)
         popOverAlertViewController.popoverPresentationController?.barButtonItem = sender
-        popOverAlertViewController.preferredContentSize = CGSize(width: 300, height:160)
+        popOverAlertViewController.preferredContentSize = CGSize(width: 300, height:110)
         popOverAlertViewController.presentationController?.delegate = self
         
-        popOverAlertViewController.completionHandler = { selectRow in
+        popOverAlertViewController.setMessageFont(UIFont.systemFont(ofSize: 16))
+        popOverAlertViewController.setSubMessageFont(UIFont.systemFont(ofSize: 12))
+        popOverAlertViewController.setButtonTextFont(UIFont.systemFont(ofSize: 14))
+        popOverAlertViewController.completionHandler = { () -> Void in
 
-        };
+        }
         present(popOverAlertViewController, animated: true, completion: nil)
     }
     
