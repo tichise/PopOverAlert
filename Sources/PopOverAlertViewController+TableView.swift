@@ -22,6 +22,12 @@ extension PopOverAlertViewController {
                 cell = tableView.dequeueReusableCell(withIdentifier: "MessageCell")!
                 cell.textLabel?.text = messege
                 cell.textLabel?.font = messageFont
+                
+                if let subMessage = self.subMessage {
+                    cell.detailTextLabel?.text = subMessage
+                    cell.detailTextLabel?.font = subMessageFont
+                }
+                
                 return cell
             }
         } else if (indexPath.section == 1) {
@@ -29,6 +35,7 @@ extension PopOverAlertViewController {
                 cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell")!
                 cell.textLabel?.text = buttonText
                 cell.textLabel?.font = buttonTextFont
+                cell.textLabel?.textColor = buttonTextColor
                 return cell
             }
         }
@@ -36,16 +43,14 @@ extension PopOverAlertViewController {
         return UITableViewCell()
     }
 
-
     override open func tableView(_ tableview: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
         if (indexPath.section == 1) {
             if (indexPath.row == 0) {
                 self.dismiss(animated: true, completion: {
-                    if self.completionHandler != nil {
-                        let selectRow:Int = indexPath.row
-                        self.completionHandler!(selectRow)
+                    if let handler = self.completionHandler {
+                        handler()
                     }
                 })
             }

@@ -7,22 +7,19 @@ import Foundation
 open class PopOverAlertViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
     
     var messege: String?
-    var footerMessage: String?
+    var subMessage: String?
     var buttonText:String?
     
     var messageFont = UIFont.systemFont(ofSize: 14)
     var buttonTextFont = UIFont.systemFont(ofSize: 14)
-    var footerMessageFont = UIFont.systemFont(ofSize: 12)
-    
+    var subMessageFont = UIFont.systemFont(ofSize: 12)
     var buttonTextColor = UIColor.black
 
-    @objc open var completionHandler: ((_ selectRow: Int) -> Void)?
+    @objc open var completionHandler: (() -> Void)?
     
-    var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
-    var showsVerticalScrollIndicator:Bool = false
-    
-    @IBOutlet weak var footerMessageLabel: UILabel!
-    
+    private var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
+    private var showsVerticalScrollIndicator:Bool = false
+        
     @objc open static func instantiate() -> PopOverAlertViewController {
         let storyboardsBundle = getStoryboardsBundle()
         let storyboard:UIStoryboard = UIStoryboard(name: "PopOverAlert", bundle: storyboardsBundle)
@@ -46,13 +43,6 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
         tableView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
         tableView.separatorStyle = separatorStyle
         tableView.accessibilityIdentifier = "PopOverAlertTableView"
-        
-        if let message = footerMessage  {
-            footerMessageLabel.text = message
-            footerMessageLabel?.font = footerMessageFont
-        } else {
-            footerMessageLabel.isHidden = true
-        }
     }
     
     override open func viewWillAppear(_ animated: Bool) {
@@ -81,8 +71,8 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
         self.messege = message
     }
     
-    @objc open func setFooterMessage(_ footerMessage:String) {
-        self.footerMessage = footerMessage
+    @objc open func setSubMessage(_ subMessage:String) {
+        self.subMessage = subMessage
     }
     
     @objc open func setButtonText(_ buttonText:String) {
@@ -93,12 +83,16 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
         self.messageFont = messageFont
     }
     
-    @objc open func setFooterMessageFont(_ footerMessageFont:UIFont) {
-        self.footerMessageFont = footerMessageFont
+    @objc open func setSubMessageFont(_ subMessageFont:UIFont) {
+        self.subMessageFont = subMessageFont
     }
     
     @objc open func setButtonTextFont(_ buttonTextFont:UIFont) {
         self.buttonTextFont = buttonTextFont
+    }
+    
+    @objc open func setButtonTextColor(_ buttonTextColor:UIColor) {
+        self.buttonTextColor = buttonTextColor
     }
     
     @objc open func setSeparatorStyle(_ separatorStyle:UITableViewCellSeparatorStyle) {
