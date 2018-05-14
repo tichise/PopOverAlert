@@ -13,13 +13,12 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     var messageFont = UIFont.systemFont(ofSize: 14)
     var buttonTextFont = UIFont.systemFont(ofSize: 14)
     var subMessageFont = UIFont.systemFont(ofSize: 12)
-    
     var buttonTextColor = UIColor.black
 
     @objc open var completionHandler: (() -> Void)?
     
-    var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
-    var showsVerticalScrollIndicator:Bool = false
+    private var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
+    private var showsVerticalScrollIndicator:Bool = false
         
     @objc open static func instantiate() -> PopOverAlertViewController {
         let storyboardsBundle = getStoryboardsBundle()
@@ -90,6 +89,10 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     
     @objc open func setButtonTextFont(_ buttonTextFont:UIFont) {
         self.buttonTextFont = buttonTextFont
+    }
+    
+    @objc open func setButtonTextColor(_ buttonTextColor:UIColor) {
+        self.buttonTextColor = buttonTextColor
     }
     
     @objc open func setSeparatorStyle(_ separatorStyle:UITableViewCellSeparatorStyle) {

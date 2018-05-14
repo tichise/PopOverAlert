@@ -40,6 +40,8 @@ class SampleViewController: UIViewController, UIAdaptivePresentationControllerDe
         popOverAlertViewController.setMessageFont(UIFont.systemFont(ofSize: 16))
         popOverAlertViewController.setSubMessageFont(UIFont.systemFont(ofSize: 12))
         popOverAlertViewController.setButtonTextFont(UIFont.systemFont(ofSize: 14))
+        popOverAlertViewController.setButtonTextColor(UIColor.black)
+        
         popOverAlertViewController.completionHandler = { () -> Void in
 
         }

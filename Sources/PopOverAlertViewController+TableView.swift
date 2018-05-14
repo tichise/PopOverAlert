@@ -35,6 +35,7 @@ extension PopOverAlertViewController {
                 cell = tableView.dequeueReusableCell(withIdentifier: "ButtonCell")!
                 cell.textLabel?.text = buttonText
                 cell.textLabel?.font = buttonTextFont
+                cell.textLabel?.textColor = buttonTextColor
                 return cell
             }
         }
