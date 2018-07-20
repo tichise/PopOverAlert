@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'PopOverAlert'
-  s.version = '1.0.1'
+  s.version = '1.0.2'
   s.license = 'MIT'
   s.summary = 'PopOverAlert is a PopOver style alert view.'
   s.homepage = 'https://github.com/tichise/PopOverAlert'
