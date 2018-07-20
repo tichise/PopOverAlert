@@ -1,6 +1,7 @@
 ### PopOverAlert ![CocoaPods Version](https://img.shields.io/cocoapods/v/PopOverAlert.svg?style=flat) ![Platform](https://img.shields.io/cocoapods/p/PopOverAlert.svg?style=flat) ![License](https://img.shields.io/cocoapods/l/PopOverAlert.svg?style=flat)
 
-PopOverAlert is a PopOver style alert view. Please use it when you want to display confirmation screen without screen transition.
+PopOverAlert is a PopOver style alert view. 
+Please use it when you want to display confirmation screen without screen transition.
 
 ### Image
 #### iPhone
