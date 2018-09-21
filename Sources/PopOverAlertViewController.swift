@@ -105,7 +105,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     
     static func getStoryboardsBundle() -> Bundle {
         let podBundle = Bundle(for: PopOverAlertViewController.self)
-        let bundleURL = podBundle.url(forResource: "Storyboards", withExtension: "bundle")
+        let bundleURL = podBundle.url(forResource: "PopOverAlertStoryboards", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
         
         return bundle
