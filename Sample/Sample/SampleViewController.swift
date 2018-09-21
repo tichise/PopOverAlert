@@ -32,7 +32,7 @@ class SampleViewController: UIViewController, UIAdaptivePresentationControllerDe
         popOverAlertViewController.setSubMessage("When you press OK, the mail will be sent immediately.")
         
         popOverAlertViewController.setShowsVerticalScrollIndicator(true)
-        popOverAlertViewController.setSeparatorStyle(UITableViewCellSeparatorStyle.singleLine)
+        popOverAlertViewController.setSeparatorStyle(UITableViewCell.SeparatorStyle.singleLine)
         popOverAlertViewController.popoverPresentationController?.barButtonItem = sender
         popOverAlertViewController.preferredContentSize = CGSize(width: 300, height:110)
         popOverAlertViewController.presentationController?.delegate = self
