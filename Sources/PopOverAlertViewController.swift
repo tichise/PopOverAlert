@@ -17,7 +17,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
 
     @objc open var completionHandler: (() -> Void)?
     
-    private var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
+    private var separatorStyle: UITableViewCell.SeparatorStyle = UITableViewCell.SeparatorStyle.none
     private var showsVerticalScrollIndicator:Bool = false
         
     @objc public static func instantiate() -> PopOverAlertViewController {
@@ -37,7 +37,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     override open func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 45
         tableView.showsHorizontalScrollIndicator = false
         tableView.showsVerticalScrollIndicator = showsVerticalScrollIndicator
@@ -55,7 +55,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
         super.viewWillLayoutSubviews()
         
         if let footerView = tableView.tableFooterView {
-            let height = footerView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height
+            let height = footerView.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).height
             
             if height != footerView.frame.size.height {
                 tableView.tableFooterView?.frame.size.height = height
@@ -95,7 +95,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
         self.buttonTextColor = buttonTextColor
     }
     
-    @objc open func setSeparatorStyle(_ separatorStyle:UITableViewCellSeparatorStyle) {
+    @objc open func setSeparatorStyle(_ separatorStyle:UITableViewCell.SeparatorStyle) {
         self.separatorStyle = separatorStyle
     }
     
