@@ -20,7 +20,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     private var separatorStyle: UITableViewCellSeparatorStyle = UITableViewCellSeparatorStyle.none
     private var showsVerticalScrollIndicator:Bool = false
         
-    @objc open static func instantiate() -> PopOverAlertViewController {
+    @objc public static func instantiate() -> PopOverAlertViewController {
         let storyboardsBundle = getStoryboardsBundle()
         let storyboard:UIStoryboard = UIStoryboard(name: "PopOverAlert", bundle: storyboardsBundle)
         let popOverAlertViewController = storyboard.instantiateViewController(withIdentifier: "PopOverAlertViewController") as! PopOverAlertViewController
