@@ -1,13 +1,17 @@
 ### PopOverAlert
 
 PopOverAlert is a PopOver style alert view.
+
 Please use it when you want to display confirmation screen without screen transition.
 
 ### Image
+
 #### iPhone
 <img src="https://user-images.githubusercontent.com/43707/39987592-2be647f6-57a0-11e8-9fd7-2f728836df64.png" width="400px">
 
 ### Examples
+
+#### for Swift
 ```
 import UIKit
 import PopOverAlert
@@ -61,9 +65,6 @@ class SampleViewController: UIViewController, UIAdaptivePresentationControllerDe
     }
 }
 ```
-
-#### Swift
-
 
 ### Installation (CocoaPods)
 `pod PopOverAlert`
