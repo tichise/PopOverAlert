@@ -36,6 +36,8 @@ extension PopOverAlertViewController {
                 cell.textLabel?.text = buttonText
                 cell.textLabel?.font = buttonTextFont
                 cell.textLabel?.textColor = buttonTextColor
+                cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: .greatestFiniteMagnitude)
+
                 return cell
             }
         }
