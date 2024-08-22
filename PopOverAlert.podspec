@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.resource_bundles = {
     'PopOverAlertStoryboards' => [
-        'Storyboards/*.storyboard'
+        'Sources/Storyboards/*.storyboard'
     ]
   }
 end
