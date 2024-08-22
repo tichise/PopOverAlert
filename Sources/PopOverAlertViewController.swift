@@ -2,7 +2,7 @@
 //  PopOverAlertViewController
 //
 
-import Foundation
+import UIKit
 
 open class PopOverAlertViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
     
@@ -102,12 +102,17 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     @objc open func setShowsVerticalScrollIndicator(_ showsVerticalScrollIndicator:Bool) {
         self.showsVerticalScrollIndicator = showsVerticalScrollIndicator
     }
-    
-    static func getStoryboardsBundle() -> Bundle {
+
+    static func getStoryboardsBundle() -> Bundle? {
         let podBundle = Bundle(for: PopOverAlertViewController.self)
+
+    #if SWIFT_PACKAGE
+        let bundleURL = podBundle.url(forResource: "PopOverAlert_PopOverAlert", withExtension: "bundle")
+    #else
         let bundleURL = podBundle.url(forResource: "PopOverAlertStoryboards", withExtension: "bundle")
+    #endif
         let bundle = Bundle(url: bundleURL!)!
-        
+            
         return bundle
     }
 }

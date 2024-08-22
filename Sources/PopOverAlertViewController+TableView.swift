@@ -2,7 +2,7 @@
 //  PopOverAlertViewController
 //
 
-import Foundation
+import UIKit
 
 extension PopOverAlertViewController {
     
