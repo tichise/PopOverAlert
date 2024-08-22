@@ -2,7 +2,7 @@
 //  PopOverAlertViewController
 //
 
-import Foundation
+import UIKit
 
 open class PopOverAlertViewController: UITableViewController, UIAdaptivePresentationControllerDelegate {
     
@@ -104,7 +104,7 @@ open class PopOverAlertViewController: UITableViewController, UIAdaptivePresenta
     }
 
     static func getStoryboardsBundle() -> Bundle? {
-        let podBundle = Bundle(for: FormSheetTextViewController.self)
+        let podBundle = Bundle(for: PopOverAlertViewController.self)
 
     #if SWIFT_PACKAGE
         let bundleURL = podBundle.url(forResource: "PopOverAlert_PopOverAlert", withExtension: "bundle")
